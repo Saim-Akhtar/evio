@@ -4,6 +4,33 @@ Minimal Python library for standardized handling of event camera data.
 
 **evio** provides a single abstraction for event streams. Each source yields standardized event packets containing `x_coords, y_coords, timestamps, polarities` arrays. This makes algorithms and filters source-agnostic.
 
+## 🏆 Hackathon Challenge: Lights, Camera, Reaction!
+
+This repository includes solutions for the Sensofusion event camera hackathon challenge!
+
+**Quick Links:**
+- 📖 [**HACKATHON.md**](HACKATHON.md) - Complete hackathon guide with algorithms and tips
+- 🎯 [Fan Rotation Detector](scripts/fan_rotation_detector.py) - Count rotations per second
+- 🚁 [Drone Tracker](scripts/drone_tracker.py) - Real-time object tracking
+- 📊 [Motion Analyzer](scripts/motion_analyzer.py) - Advanced motion analysis
+- ⚡ [Benchmark Tool](scripts/benchmark.py) - Performance testing
+
+**Get Started:**
+```bash
+# Install dependencies
+uv sync
+
+# Download dataset from: https://drive.google.com/drive/folders/18ORzE9_aHABYqOHzVdL0GANk_eIMaSuE
+
+# Run fan rotation detector
+uv run scripts/fan_rotation_detector.py data/fan.dat
+
+# Run drone tracker
+uv run scripts/drone_tracker.py data/drone.dat
+```
+
+See [HACKATHON.md](HACKATHON.md) for detailed documentation.
+
 ---
 
 ## Features
@@ -19,10 +46,17 @@ Minimal Python library for standardized handling of event camera data.
 .
 ├─ pyproject.toml
 ├─ README.md
+├─ HACKATHON.md                    # Hackathon guide and documentation
 ├─ LICENSE
 ├─ .gitignore
+├─ data/
+│  └─ README.md                    # Dataset download instructions
 ├─ scripts/
-│  └─ play_dat.py    
+│  ├─ play_dat.py                  # Event data visualizer
+│  ├─ fan_rotation_detector.py    # Fan rotation counting
+│  ├─ drone_tracker.py             # Real-time drone tracking
+│  ├─ motion_analyzer.py           # Advanced motion analysis
+│  └─ benchmark.py                 # Performance benchmarking
 └─ src/
    └─ evio/
       ├─ __init__.py
@@ -35,7 +69,7 @@ Minimal Python library for standardized handling of event camera data.
       └─── source/
           ├── __init__.py
           └── dat_file.py
-       
+
 ```
 
 ---
